@@ -4,13 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="The website is dedicated to the practice of web development. See the github link for more detailed report."
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/mainStyle.css">
   <title>Educational Center</title>
 </head>
 <body>
-  <section class="navigationSection" id="navigationBar">
+  <nav class="navigationSection" id="navigationBar">
     <div class="container">
       <div class="navigation">
         <div class="navLogo">
@@ -29,7 +30,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </nav>
   <section class="headerSection" id="header">
     <div class="container">
       <div class="headerContent">
@@ -159,8 +160,8 @@
                         </div>
                       </div>
                   </div>
-                  <button class="arrows prev" onclick="plusslide(-1)"><</button>
-                  <button class="arrows next" onclick="plusslide(1)">></button>
+                  <button class="arrows prev" onclick="plusslide(-1)">&lt;</button>
+                  <button class="arrows next" onclick="plusslide(1)">&gt;</button>
                   <div class="dots">
                     <span onclick="currentslide(1)"></span>
                     <span onclick="currentslide(2)"></span>
@@ -177,8 +178,8 @@
       <div class="contactContainer">
         <div class="contactForm">
           <form class="contactFormContent" action="index.html" method="post">
-            <input class="input1" type="text" name="" value="" placeholder="Full Name">
-            <input class="input2" type="email" name="" value="" placeholder="Email">
+            <input class="input1" type="text" name="inOne" value="" placeholder="Full Name">
+            <input class="input2" type="email" name="inTwo" value="" placeholder="Email">
             <textarea class="input3" name="name" rows="8" cols="80" placeholder="Text Message"></textarea>
           </form>
           <button class="btnContact" type="button" name="button">Send Message</button>
@@ -203,13 +204,13 @@
     </div>
   </section>
 
-  <section id="footer">
+  <footer id="footer">
     <div class="footerContainer">
       <p>Copyright <span id="currentYear"></span> Desing by TemplateMC. Developed by Vladimir Pak.</p>
     </div>
-  </section>
+  </footer>
 
-<script type="text/javascript" src="scripts/displayDate.js"></script>
-<script type="text/javascript" src="scripts/sliderMain.js"></script>
+<script src="scripts/displayDate.js"></script>
+<script src="scripts/sliderMain.js"></script>
 </body>
 </html>
