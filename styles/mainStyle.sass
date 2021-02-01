@@ -6,6 +6,13 @@
   box-sizing: border-box
   font-family: 'Open Sans', sans-serif
 
+body
+  svg
+    display: block
+
+*:focus
+  outline: none !important
+
 .container
   width: 90%
   margin: 0 auto
@@ -25,8 +32,7 @@
   align-items: flex-start
   +setWidthAndHeight(80px, 80px)
   padding: 10px
-  border: 3px solid #ffffff
-  //5c2a9d
+  border: 3px solid $mainColorPurple
   border-radius: 57% 43% 58% 42% / 39% 51% 49% 61%
   display: block
   max-width: 100%
@@ -53,26 +59,48 @@
         text-transform: uppercase
         color: #ffffff
 
+.navList
+  a:hover
+    color: $mainColorPurple
+
+
 .btnNavbar
   margin-bottom: 10px
 
 .btnContact
   padding: 10px 40px
-  background: orange
-  border: 1px solid #ffffff
+  background: $mainColorOrange
+  border: none
   border-radius: 35px
   text-transform: uppercase
   color: $mainColorWhite
 
+.btnContact:hover
+  background: $mainColorPurple
+
+
 .btnContact:focus
-  background: #ffffff
-  border: 1px solid #000000
-  color: orange
+  background: $mainColorOrange
+  border-color: $mainColorOrange
+  color: $mainColorWhite
 
 .headerSection
   background: #f37121
   position: relative
-  height: 480px
+  height: 500px
+
+.imageBanner
+  img
+    position: absolute
+    width: 300px
+    height: 300px
+    z-index: 1000000
+    right: 10%
+    top: 5%
+    transform: translate(10%, 5%)
+    transform: rotate(5deg)
+    display: block
+
 
 .custom-shape-divider-bottom-1611917006
     position: absolute
@@ -107,12 +135,14 @@
     font-size: 5rem
     font-weight: bold
     letter-spacing: 1.5px
-    color: $mainColorBlack
+    color: $mainColorWhite
 
 .headerTexts
   span
-    color: $mainColorWhite
+    color: $mainColorPurple
+    font-weight: bolder
     text-transform: uppercase
+
 
 .headerTexts
   p
@@ -126,21 +156,43 @@
 .btnLearnMore
     margin-top: 30px
     padding: 10px 40px
-    background: #000000
-    border: 2px solid #fff
+    background: $mainColorPurple
+    border: 1px solid $mainColorWhite
     border-radius: 35px
     text-transform: uppercase
+    font-weight: bolder
     color: $mainColorWhite
+
+.btnLearnMore:hover
+    background: $mainColorWhite
+    border: none
+    color: $mainColorPurple
 
 //Section #2
 .servicesContainer
   display: flex
-  flex-direction: row
-  flex-wrap: wrap
+  flex-direction: column
+  align-items: center
+  text-align: center
   justify-content: space-around
   counter-reset: css-counter 0
-  margin: 70px 0
+  margin: 10px 0
 
+.servicesTitles
+  margin-bottom: 45px
+
+.servicesTitles
+  h3
+    color: $mainColorPurple
+    font-size: 4rem
+    font-weight: bold
+    letter-spacing: 4px
+
+.servicesContent
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  align-items: center
 
 .serviceItem
   margin: 0 15px
@@ -153,9 +205,17 @@
   counter-increment: css-counter 1
   width: 30%
   position: relative
-  border: 1px solid #ffffff
+  border: 2px solid $mainColorPurple
   border-radius: 10px
-  box-shadow: 0 3px 5px 3px rgba(0,0,0, 0.3)
+  box-shadow: 0 3px 5px 3px rgba(0, 0, 0, 0.3)
+
+.serviceImgMark
+    position: absolute
+    width: 90px !important
+    height: 90px !important
+    top: -3%
+    right: 5%
+
 
 .serviceItem:first-child
   margin-left: 0
@@ -166,20 +226,29 @@
 .serviceItem
   h4
     font-size: 2.5rem
+    color: $mainColorOrange
 
 .serviceItem
   p
+    color: $mainColorPurple
     font-size: 1.5rem
     margin: 30px 0
 
 .serviceItem
   button
     padding: 10px 40px
+    color: $mainColorPurple
     font-size: 1.5rem
     font-weight: bold
-    border: 2px solid #f37121
-    background: #ffffff
+    border: 2px solid $mainColorPurple
+    background: $mainColorWhite
     text-transform: uppercase
+
+.serviceItem
+  button:hover
+    color: $mainColorWhite
+    border: 2px solid $mainColorOrange
+    background: $mainColorOrange
 
 .serviceItem
   span
@@ -203,9 +272,9 @@
   display: flex
   justify-content: space-between
   align-items: center
-  margin: 50px 0
+  margin: 15px 0 20px 0
 
-.productLeftConrainer
+.productLeftContainer
   img
     +setWidthAndHeight(100%, 100%)
 
@@ -236,10 +305,158 @@
     color: #828282
     font-size: 15px
 
-//Section #4: testimonials
+//S4: pricingTitles
+#ourPricingPlans, #productAdvantages
+  background: $mainColorPurple
+
+.pricingPlansContainer
+  text-align: center
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  margin-bottom: 100px
+
+.pricingTitles
+  margin-bottom: 50px
+
+.pricingTitles
+  h3
+    color: $mainColorWhite
+    font-size: 4rem
+    font-weight: bold
+    letter-spacing: 2px
+    margin-bottom: 80px
+
+.pricingContent
+  display: flex
+  flex-direction: row
+  justify-content: space-around
+  align-items: center
+  flex-wrap: wrap
+
+.pricingItem
+  position: relative
+  z-index: 0
+  width: 400px
+  height: auto
+  padding: 15px
+  box-shadow: 2px 3px 8px 5px rgba(0,0,0, 0.6)
+  border-radius: 20px
+  // background: linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(255,239,0,1) 35%, rgba(154,0,255,1) 100%)
+  background: $mainColorWhite
+
+.pricingItemTexts
+  margin-top: 55px
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  align-items: center
+
+.pricingItemTexts
+  ul
+    flex: 1 1 auto
+
+.pricingItemTexts
+  ul
+    li
+      list-style-type: none
+
+.pricingItemTexts
+  h4
+    font-size: 3rem
+    text-transform: uppercase
+    letter-spacing: 2px
+    font-weight: bolder
+    color: $mainColorPurple
+    margin-bottom: 35px
+
+.pricingItemImg1
+    width: 125px
+    height: 120px
+    position: absolute
+    z-index: 1
+    top: -12%
+    right: 35%
+
+.pricingItemImg2
+  width: 90px
+  height: 90px
+  position: absolute
+  z-index: 1
+  top: 1%
+  right: 1%
+
+.pricingItemImg22
+  width: 90px
+  height: 90px
+  position: absolute
+  z-index: 1
+  top: -10%
+  right: -3%
+
+.pricingItemImg222
+  width: 90px
+  height: 90px
+  position: absolute
+  z-index: 1
+  top: -8%
+  right: -6%
+
+.pricingItemTexts
+  ul
+    li
+      font-size: 18px
+      margin-left: 25px
+      color: $mainColorPurple
+      margin-bottom: 20px
+    li::before
+      position: absolute
+      left: 5%
+      display: block
+      content: url("../images/halloween-party.png")
+
+.pricingItemTexts
+  button
+    padding: 10px 40px
+    color: $mainColorWhite
+    text-transform: uppercase
+    letter-spacing: 2px
+    font-weight: bolder
+    background: $mainColorBlack
+    border: 2px solid $mainColorWhite
+
+.pricingItemTexts
+  button:hover
+    color: $mainColorBlack
+    background: $mainColorWhite
+    border-color: $mainColorBlack
+
+.custom-shape-divider-bottom-1612187025
+    z-index: -1
+    position: absolute
+    border-radius: 20px
+    bottom: 0
+    left: 0
+    width: 100%
+    overflow: hidden
+    line-height: 0
+    transform: rotate(180deg)
+
+
+.custom-shape-divider-bottom-1612187025 svg
+    position: relative
+    display: block
+    width: calc(100% + 1.3px)
+    height: 130px
+
+
+.custom-shape-divider-bottom-1612187025 .shape-fill
+    fill: $mainColorPurple
+
+//Section #5: testimonials
 .testimonialMainContent
   text-align: center
-  margin-top: 20px
+  margin-top: 100px
   display: flex
   flex-direction: column
   justify-content: space-between
@@ -247,8 +464,9 @@
 .testimonialsTitles
   h3
     font-size: 4rem
-    font-weight: bold
+    font-weight: bolder
     letter-spacing: 2px
+    color: $mainColorPurple
 
 .testimonialsTitles
   p
@@ -259,7 +477,7 @@
     margin-top: 40px
 
 .testimoniaContent
-  margin-top: 40px
+  margin-top: 50px
 
 //Slider Section
 .slider-body
@@ -271,7 +489,7 @@
 .slider
   position: relative
   width: 100%
-  height: 300px
+  height: 350px
   overflow: hidden
 
 .slides
@@ -312,12 +530,12 @@
   padding: 0 13% 5% 13%
 
 .slide-content
-  border: 2px solid #f37121
+  border: none
   border-radius: 20px
-  padding: 15px
+  padding: 20px
   position: relative
   width: 400px
-  background: #ee6d65
+  background: $mainColorPurple
 
 .slide-texts
   text-align: center
@@ -333,6 +551,7 @@
   h3
     font-weight: bold
     color: $mainColorWhite
+    letter-spacing: 2px
 
 .slide-texts
   p
@@ -353,8 +572,8 @@
   background: none
   outline: none
   border: none
-  font-size: 40px
-  color: #000000
+  font-size: 80px
+  color: $mainColorPurple
   transition: 0.4s linear
 
 .slider .prev
@@ -370,7 +589,7 @@
     transform: translate(-50%, -50%)
     width: auto
     text-align: center
-    border: 1px solid #f37121
+    border: 1px solid $mainColorPurple
     border-radius: 35px
 
 .dots
@@ -383,17 +602,19 @@
     display: inline-block
     transition: 0.4s linear
 
-.dot-active
-    background-color: #f37121 !important
-    border: 4px solid #f37121
+.dots:hover
+  cursor: pointer
 
+.dot-active
+    background-color: $mainColorPurple !important
+    border: 4px solid $mainColorPurple
 
 //Contact Section
 .contactSection
-  background: #f37121
+  background: $mainColorOrange
   position: relative
   height: 350px
-  margin-top: 100px
+  margin-top: 20px
 
 .custom-shape-divider-top-1612010432
     position: absolute
@@ -439,13 +660,19 @@
   grid-template: repeat(3, auto) / repeat(2, auto)
 
 .footerContainer
-  background: #f37121
+  background: $mainColorOrange
 
 .contactFormContent
   input, textarea
-    border: 1px solid #828282
+    border: 2px solid $mainColorOrange
     border-radius: 3px
     padding: 10px
+
+.contactFormContent
+  input:focus,
+  textarea:focus
+    outline: none !important
+    border-color: $mainColorPurple
 
 .contactFormContent
   textarea
@@ -464,7 +691,7 @@
   grid-column: 1/3
 
 .contactTexts
-  margin: 100px 0 0 700px
+  margin: 130px 0 0 700px
 
 .contactTexts
   h3
