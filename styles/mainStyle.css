@@ -71,29 +71,6 @@ body svg {
   color: #8c2eff;
 }
 
-.btnNavbar {
-  margin-bottom: 10px;
-}
-
-.btnContact {
-  padding: 10px 40px;
-  background: #f37121;
-  border: none;
-  border-radius: 35px;
-  text-transform: uppercase;
-  color: #ffffff;
-}
-
-.btnContact:hover {
-  background: #8c2eff;
-}
-
-.btnContact:focus {
-  background: #f37121;
-  border-color: #f37121;
-  color: #ffffff;
-}
-
 .headerSection {
   background: #f37121;
   position: relative;
